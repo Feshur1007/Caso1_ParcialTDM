@@ -1,11 +1,18 @@
 const menuBtn = document.getElementById('menuBtn');
 const navLinks = document.getElementById('navLinks');
 menuBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  menuBtn.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+  const isOpen = navLinks.classList.toggle('open');
+  menuBtn.textContent = isOpen ? '✕' : '☰';
+  menuBtn.setAttribute('aria-expanded', String(isOpen));
+  menuBtn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
 });
 navLinks.querySelectorAll('a').forEach(a =>
-  a.addEventListener('click', () => navLinks.classList.remove('open'))
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.textContent = '☰';
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.setAttribute('aria-label', 'Abrir menú');
+  })
 );
 document.getElementById('year').textContent = new Date().getFullYear();
 const io = new IntersectionObserver(entries => {
@@ -21,14 +28,10 @@ form.addEventListener('submit', (e) => {
   const data = new FormData(form);
   const nombre = (data.get('nombre') || '').toString().trim();
   const email = (data.get('email') || '').toString().trim();
-  const tipo = (data.get('tipo') || '').toString();
-  const mensaje = (data.get('mensaje') || '').toString().trim();
-  if (nombre.length < 3) return error('texto error');
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return error('texto error');
-  if (!tipo) return error('texto error');
-  if (mensaje.length < 10) return error('texto error');
+  if (nombre.length < 2) return error('Escribe tu nombre para continuar.');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return error('Escribe un correo electrónico válido.');
   msg.className = 'form-msg ok';
-  msg.textContent = 'texto exito';
+  msg.textContent = `¡Gracias, ${nombre}! Te avisaremos cuando haya novedades de BRUMA.`;
   form.reset();
 });
 function error(t) {

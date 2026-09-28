@@ -45,7 +45,7 @@ body {
 .hero-stats span { color: var(--muted); font-size: .85rem; }
 .hero-visual { display: flex; justify-content: center; }
 .visual-card { width: 100%; max-width: 360px; background: linear-gradient(180deg, var(--card), var(--bg2)); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; padding: 1.5rem; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,.4); }
-.visual-top { height: 150px; border-radius: 12px; background: linear-gradient(135deg, #6c7cff 0%, #9d6bff 45%, #3ddad7 100%); margin-bottom: 1rem; }
+.visual-top { height: 150px; border-radius: 12px; background: linear-gradient(135deg, rgba(23,27,54,.25), rgba(15,18,38,.3)), url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=85') center/cover; margin-bottom: 1rem; }
 .visual-tags { display: flex; gap: .5rem; justify-content: center; margin-top: 1rem; }
 .visual-tags span { font-size: .75rem; background: rgba(255,255,255,.1); padding: .25rem .7rem; border-radius: 999px; }
 .section { padding: 3.5rem 0; }
@@ -75,6 +75,8 @@ body {
 .footer { border-top: 1px solid rgba(255,255,255,.08); padding: 1.5rem 0; margin-top: 2rem; }
 .footer-inner { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: .9rem; }
 .muted { color: var(--muted); }
+.muted a { color: inherit; text-decoration: none; }
+.muted a:hover { color: #fff; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s, transform .6s; }
 .reveal.visible { opacity: 1; transform: none; }
