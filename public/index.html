@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>titulo</title>
+  <meta name="description" content="descripcion" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+
+
+
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#inicio" class="logo">logo</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio" class="active">inicio</a>
+        <a href="#servicios">servicios</a>
+        <a href="#portafolio">portafolio</a>
+        <a href="#contacto">contacto</a>
+      </nav>
+      <a href="#contacto" class="btn btn-small nav-cta">boton</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+  <main id="inicio">
+    <section class="hero container">
+      <div class="hero-text">
+        <span class="badge">etiqueta</span>
+        <h1>titulo</h1>
+        <p class="subtitle">subtitulo</p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-primary">boton primario</a>
+          <a href="#portafolio" class="btn btn-ghost">boton secundario</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>texto</strong><span>texto</span></div>
+          <div><strong>texto</strong><span>texto</span></div>
+          <div><strong>texto</strong><span>texto</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-card">
+          <div class="visual-top"></div>
+          <p>texto imagen</p>
+          <div class="visual-tags"><span>etiqueta</span><span>etiqueta</span><span>etiqueta</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="servicios" class="section container">
+      <h2 class="section-title">titulo seccion</h2>
+      <p class="section-sub">subtitulo seccion</p>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-icon">1</div>
+          <h3>titulo tarjeta</h3>
+          <p>texto tarjeta</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">2</div>
+          <h3>titulo tarjeta</h3>
+          <p>texto tarjeta</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">3</div>
+          <h3>titulo tarjeta</h3>
+          <p>texto tarjeta</p>
+        </article>
+      </div>
+    </section>
+    <section id="portafolio" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">titulo seccion</h2>
+        <p class="section-sub">subtitulo seccion</p>
+        <div class="gallery">
+          <article class="g-item reveal"><div class="g-box">imagen 1</div><h4>titulo item</h4><p>texto item</p></article>
+          <article class="g-item reveal"><div class="g-box">imagen 2</div><h4>titulo item</h4><p>texto item</p></article>
+          <article class="g-item reveal"><div class="g-box">imagen 3</div><h4>titulo item</h4><p>texto item</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="contacto" class="section container">
+      <div class="form-wrap">
+        <div class="form-info">
+          <h2 class="section-title left">titulo formulario</h2>
+          <p>texto informativo</p>
+          <ul>
+            <li>texto contacto 1</li>
+            <li>texto contacto 2</li>
+            <li>texto contacto 3</li>
+          </ul>
+        </div>
+        <form id="contactForm" class="form-card" novalidate>
+          <label>titulo campo
+            <input type="text" name="nombre" placeholder="texto" required />
+          </label>
+          <label>titulo campo
+            <input type="email" name="email" placeholder="texto" required />
+          </label>
+          <label>titulo campo
+            <select name="tipo" required>
+              <option value="">texto</option>
+              <option>opcion 1</option>
+              <option>opcion 2</option>
+              <option>opcion 3</option>
+            </select>
+          </label>
+          <label>titulo campo
+            <textarea name="mensaje" rows="4" placeholder="texto" required></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary btn-full">boton enviar</button>
+          <p class="form-msg" id="formMsg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> texto pie</p>
+      <p class="muted">texto secundario</p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
